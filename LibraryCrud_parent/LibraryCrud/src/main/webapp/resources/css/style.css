@@ -1,0 +1,21 @@
+.content {
+	margin: auto;
+	text-align: center;
+	width: 90%;
+}
+
+/* #createStudent{ */
+/* 	text-align: center; */
+/* } */
+.btnWidth {
+	width: 80px;
+}
+
+.tableUpdated {
+	width: 90% !important;
+	margin: 17px 58px 0 !important;
+}
+
+.btnSpace {
+	margin: 17px;
+}

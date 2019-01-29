@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale1"
+		http-equiv="X-UA-Conpatible" />
+
+	<title>Books List</title>
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	<h:outputStylesheet library="css" name="style.css" />
+</h:head>
+
+<h:body>
+	<div class="content">
+		<h2>Book List</h2>
+	</div>
+
+	<div>
+		<h:form id="bookForm">
+			<h:dataTable var="book" value="#{bookBean.books}" id="bookTable"
+				styleClass="table"
+				class="table table-striped table-hover table-bordered tableUpdated">
+				<h:column>
+					<f:facet name="header">Id</f:facet>
+					<h:outputText value="#{book.id}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Title</f:facet>
+					<h:outputText value="#{book.title}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Author</f:facet>
+					<h:outputText value="#{book.author}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Editorial</f:facet>
+					<h:outputText value="#{book.editorial}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Edit</f:facet>
+
+					<h:commandButton action="#{bookBean.editBook(book.id)}"
+						value="Edit" class="btn btn-primary" />
+
+				</h:column>
+				<h:column>
+					<f:facet name="header">Delete</f:facet>
+
+					<h:commandButton action="#{bookBean.deleteBook(book.id)}"
+						value="Delete" class="btn btn-danger" />
+
+				</h:column>
+			</h:dataTable>
+		</h:form>
+
+		<div class="centerButton">
+			<h:form>
+				<center>
+					<h:commandButton action="createBook"
+						value="Register a new book" class="btn btn-success btnSpace" />
+				</center>
+			</h:form>
+		</div>
+
+	</div>
+
+</h:body>
+
+</html>
